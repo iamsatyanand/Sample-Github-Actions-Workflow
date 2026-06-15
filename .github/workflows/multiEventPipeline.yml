@@ -12,6 +12,7 @@ on:
       - master
     types:
       - closed
+      - opened
   
   workflow_dispatch: # Event: Manually trigger the workflow from the GitHub Actions tab in the repository
       
@@ -40,7 +41,7 @@ jobs:
     if: github.event_name == 'pull_request' && github.event.action == 'closed' # Run this job only if the event is a pull request and the action is closed
     runs-on: ubuntu-latest
 
-    steps: # Steps to be executed in the job
+    steps: 
 
       - name: "Running on pull request closed" # Step 1
         run: echo "Running on pull request closed"
@@ -53,3 +54,4 @@ jobs:
 
       - name: "Running on workflow dispatch" # Step 1
         run: echo "Running on workflow dispatch"
+
