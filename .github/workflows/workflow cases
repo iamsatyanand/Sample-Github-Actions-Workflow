@@ -1,0 +1,61 @@
+If you want the workflow to run on any branch push, you can simply remove the branches filter:
+
+name: Hello World workflow
+
+on:
+  push:
+
+jobs:
+  hello_world_job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print Hello World
+        run: echo "Hello, World!"
+
+      - name: Print current date and time
+        run: date
+
+This will trigger on pushes to all branches.
+
+Alternative: Explicitly match all branches
+
+You can also write:
+
+on:
+  push:
+    branches:
+      - '**'
+
+or
+
+on:
+  push:
+    branches:
+      - '*'
+
+However, the simplest and most common approach is just:
+
+on:
+  push:
+If you want all branches except some
+
+For example, run on every branch except production:
+
+on:
+  push:
+    branches-ignore:
+      - production
+
+Or exclude multiple branches:
+
+on:
+  push:
+    branches-ignore:
+      - production
+      - master
+
+So for "run on any branch", use:
+
+on:
+  push:
