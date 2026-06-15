@@ -1,0 +1,21 @@
+name : "Hello World workflow"
+
+# controls when the action will run. Triggers the workflow on push done to master or production branch
+on:
+  push:
+    branches: 
+        - master
+        - production
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+    # name of the job
+    hello_world_job:
+        # The type of runner that the job will run on- runner is a server or machine that has the GitHub Actions runner application installed. The runner listens for available jobs, runs one when it receives it, and reports the progress, logs, and final results back to GitHub. In this case, we are using the latest version of Ubuntu as our runner.
+        runs-on: ubuntu-latest
+
+        # Steps represent a sequence of tasks that will be executed as part of the job
+        steps:
+            # Step 1: Run a command to print "Hello, World!" to the console
+            - name: Print Hello World
+              run: echo "Hello, World!"
