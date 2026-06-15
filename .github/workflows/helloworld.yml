@@ -19,3 +19,6 @@ jobs:
             # Step 1: Run a command to print "Hello, World!" to the console
             - name: Print Hello World
               run: echo "Hello, World!"
+
+            - name: Print current date and time
+              run: date
