@@ -37,6 +37,15 @@ jobs:
       - name: "Running on pull request" # Step 1
         run: echo "Running on pull request"
 
+  on-pull-request-opened: # Job 3
+    if: github.event_name == 'pull_request' && github.event.action == 'opened' # Run this job only if the event is a pull request and the action is opened
+    runs-on: ubuntu-latest
+
+    steps: 
+
+      - name: "Running on pull request opened" # Step 1
+        run: echo "Running on pull request opened"
+
   on-pull-request-closed: # Job 3
     if: github.event_name == 'pull_request' && github.event.action == 'closed' # Run this job only if the event is a pull request and the action is closed
     runs-on: ubuntu-latest
