@@ -10,6 +10,9 @@ on:
   pull_request: # Event: Whenever a pull request is made to the repository
     branches:
       - master
+  
+  workflow_dispatch: # Event: Manually trigger the workflow from the GitHub Actions tab in the repository
+      
 
 jobs:
 
